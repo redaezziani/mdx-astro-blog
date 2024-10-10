@@ -20,9 +20,33 @@ const { Content } = await post.render();
 ---
 
 <Layout title="test-post">
-    <div class="max-w-[1000px] mx-auto md:px-4 md:py-8">
+    <div class="max-w-[1000px]  mx-auto md:px-4 md:py-8">
+        <div class="flex mt-24 gap-1 justify-start items-center ">
+            <a
+            href="/"
+            class="text-sky-600 font-semibold text-sm"
+        >
+
+            الرئيسية
+        </a>
+        <span class="text-slate-500">/</span>
+        <a
+            href="/blog"
+            class=" font-semibold text-sm"
+        >
+            الأخبار
+        </a>
+        <span class="text-slate-500">/</span>
+        <a
+            href={`/blog/${post.slug}`}
+            class=" font-semibold text-sm"
+        >
+            {post.data.title}
+        </a>
+        </div>
+      
         <article
-            class="w-full flex flex-col justify-start items-start space-y-4"
+            class="w-full mt-5  flex flex-col justify-start items-start space-y-4"
         >
             <Image
                 src={post.data.cover}

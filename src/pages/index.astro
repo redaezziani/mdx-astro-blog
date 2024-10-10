@@ -7,7 +7,9 @@ const allPosts = await getCollection('blog');
 ---
  
 <Layout title="Welcome to Astro.">
-  <main>
+  <main
+  class=" mt-32"
+  >
     {allPosts.map((post) => <a href={'/blog/' +post.slug}>{post.data.title}</a>)}
   </main>
 </Layout>
