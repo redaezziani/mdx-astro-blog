@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
  
-const allPosts = await getCollection('blog');
+const allPosts = await getCollection('blog') as {slug: string, data: {title: string}}[];
  
 ---
  
